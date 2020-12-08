@@ -9,7 +9,7 @@ response = requests.get(
     "http://api.openweathermap.org/data/2.5/weather?id=3137115&appid=4fbcfd9147ff6df0e3ee3de039a4e70c&units=metric")
 
 data = response.json()
-print(data)
+# print(data)
 
 print("----------------")
 
