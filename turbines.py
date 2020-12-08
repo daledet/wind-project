@@ -6,9 +6,8 @@ os.system('clear')
 
 
 class Turbine:
-    def __init__(self, location, sweep):
+    def __init__(self, location):
         self.location = location
-        self.sweep = sweep
 
 
 class WindSpeed:
@@ -17,7 +16,7 @@ class WindSpeed:
         self.direction = direction
 
 
-turbine_stavanger = Turbine("stavanger", 5)
+turbine_stavanger = Turbine(getters.turbine_location)
 wind_speed_stavanger = WindSpeed(
     getters.wind_speed_stavanger, getters.wind_degree_stavanger)
 
