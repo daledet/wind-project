@@ -16,8 +16,8 @@ print(wind_speed_stavanger)
 
 # print("----------------")
 
-data = response.json()
-print(data)
+# data = response.json()
+# print(data)
 
 # print("----------------")
 

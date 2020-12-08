@@ -20,6 +20,6 @@ turbine_stavanger = Turbine(getters.turbine_location)
 wind_speed_stavanger = WindSpeed(
     getters.wind_speed_stavanger, getters.wind_degree_stavanger)
 
-
+print(f'Wind Speed: {getters.wind_speed_stavanger}')
 print(f'Status: {helpers.turbine_status(getters.wind_speed_stavanger)}')
-print(f'kWh: {helpers.power_output(5, getters.wind_speed_stavanger)}')
+print(f'kW: {helpers.power_output(15, getters.wind_speed_stavanger)}')

@@ -1,10 +1,11 @@
 import getters
+import requests
 
 
 def turbine_status(wind_speed):
-    if wind_speed < 5:
+    if wind_speed < 3:
         return "Off"
-    if wind_speed >= 5:
+    if wind_speed >= 3:
         return "On"
 
 
