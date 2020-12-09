@@ -10,15 +10,15 @@ url = "http://api.openweathermap.org/data/2.5/weather?id=3137115&"
 
 response = requests.get(url, config.api)
 data = response.json()
-print(data)
+# print(data)
 
-print("----------------")
+# print("----------------")
 
 wind_speed_stavanger = response.json()['wind']['speed']
 wind_degree_stavanger = response.json()['wind']['deg']
 turbine_location = response.json()['name']
 
-print(wind_speed_stavanger)
+# print(wind_speed_stavanger)
 
 # sunrise = response.json()['sys']['sunrise']
 # print(sunrise)
