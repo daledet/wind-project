@@ -16,7 +16,8 @@ class WindSpeed:
         self.direction = direction
 
 
-turbine_stavanger = Turbine(getters.turbine_location)
+# turbine_stavanger = Turbine(getters.turbine_location)
+
 wind_speed_stavanger = WindSpeed(
     getters.wind_speed_stavanger, getters.wind_degree_stavanger)
 
