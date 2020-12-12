@@ -1,5 +1,6 @@
 import getters
 import requests
+import math
 
 
 def turbine_status(wind_speed):
@@ -9,7 +10,7 @@ def turbine_status(wind_speed):
         return "On"
 
 
-def power_output(sweep, wind_speed):  # Need to add cutin / cutout speed
-    # 1.225 Density of air at sealevel
-    if getters.wind_speed_stavanger >= 3 and getters.wind_speed_stavanger <= 12:
-        return 0.5 * 1.225 * sweep * wind_speed ** 3
+# Need to add cutin / cutout speed
+def power_output(sweep, wind_speed, coefficient_of_performance=0.4):
+    # P = 0.5Apv^3
+    return (0.5 * sweep * 1.2 * wind_speed ** 3) * coefficient_of_performance
