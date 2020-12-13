@@ -22,9 +22,9 @@ turbine_location = response.json()['name']
 print(wind_speed_stavanger)
 
 
-sunrise = response.json()['sys']['sunrise']
-print(sunrise)
+# sunrise = response.json()['sys']['sunrise']
+# print(sunrise)
 
-ts_epoch = sunrise
-ts = datetime.datetime.fromtimestamp(ts_epoch).strftime('%H:%M:%S')
-print(ts)
+# ts_epoch = sunrise
+# ts = datetime.datetime.fromtimestamp(ts_epoch).strftime('%H:%M:%S')
+# print(ts)
