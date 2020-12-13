@@ -17,5 +17,10 @@ class Turbine:
 
 
 stavanger_turbine = Turbine('stavanger', 15, 0.4)
+bergen_turbine = Turbine('bergen', 15, 0.4)
+
 print(stavanger_turbine.power_output(
     getters.wind_speed_stavanger, stavanger_turbine.sweep_radius))
+
+print(bergen_turbine.power_output(
+    getters.wind_speed_bergen, bergen_turbine.sweep_radius))
