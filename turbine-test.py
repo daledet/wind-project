@@ -19,8 +19,11 @@ class Turbine:
 stavanger_turbine = Turbine('stavanger', 15, 0.4)
 bergen_turbine = Turbine('bergen', 15, 0.4)
 
-print(stavanger_turbine.power_output(
-    getters.wind_speed_stavanger, stavanger_turbine.sweep_radius))
+stavanger_output = stavanger_turbine.power_output(
+    getters.wind_speed_stavanger, stavanger_turbine.sweep_radius)
 
-print(bergen_turbine.power_output(
-    getters.wind_speed_bergen, bergen_turbine.sweep_radius))
+bergen_output = bergen_turbine.power_output(
+    getters.wind_speed_bergen, bergen_turbine.sweep_radius)
+
+print(f'Stavanger: {stavanger_output} kW')
+print(f'Bergen: {bergen_output} kW')

@@ -15,8 +15,8 @@ response_bergen = requests.get(url_bergen, config.api)
 data_stavanger = response_stavanger.json()
 data_bergen = response_bergen.json()
 
-print(data_stavanger)
-print(data_bergen)
+print(f'Stavanger: {data_stavanger}')
+print(f'Bergen: {data_bergen}')
 
 # print("----------------")
 
