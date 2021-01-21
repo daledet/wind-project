@@ -16,9 +16,8 @@ data_stavanger = response_stavanger.json()
 data_bergen = response_bergen.json()
 
 print(f'Stavanger: {data_stavanger}')
+print("----------------")
 print(f'Bergen: {data_bergen}')
-
-# print("----------------")
 
 
 wind_speed_stavanger = response_stavanger.json()['wind']['speed']
@@ -29,13 +28,16 @@ wind_speed_bergen = response_bergen.json()['wind']['speed']
 wind_degree_bergen = response_bergen.json()['wind']['deg']
 turbine_location_bergen = response_bergen.json()['name']
 
-print(wind_speed_stavanger)
-print(wind_speed_bergen)
+print('-----------------')
+
+print(f'Wind Speed Stavanger: {wind_speed_stavanger} m/s')
+print('----------')
+print(f'Wind Speed Bergen: {wind_speed_bergen} m/s')
 
 
-# sunrise = response.json()['sys']['sunrise']
-# print(sunrise)
+sunrise = response_stavanger.json()['sys']['sunrise']
+print(sunrise)
 
-# ts_epoch = sunrise
-# ts = datetime.datetime.fromtimestamp(ts_epoch).strftime('%H:%M:%S')
-# print(ts)
+ts_epoch = sunrise
+ts = datetime.datetime.fromtimestamp(ts_epoch).strftime('%H:%M:%S')
+print(ts)
