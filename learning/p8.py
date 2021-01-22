@@ -43,3 +43,20 @@ print('Sum without axis')
 print('This will be identical to the above since default is None:')
 print(np.sum(layer_outputs, axis=None))
 print(np.sum(layer_outputs, axis=0))
+
+# Softmax activation
+
+
+class Activation_Softmax:  # Forward pass
+    def forward(self, inputs):
+        # Get unnormalized probabilities
+        exp_values = np.exp(inputs - np.max(inputs, axis=1,
+                                            keepdims=True))
+        probabilities = exp_values / np.sum(exp_values, axis=1,
+                                            keepdims=True)
+
+        self.output = probabilities
+
+
+print(np.exp(1))
+print(np.exp(10))
