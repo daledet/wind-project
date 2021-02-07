@@ -1,10 +1,12 @@
 import numpy as np
+from functions import ActivationReLU
 
 np.random.seed(0)
 
-X = [[1.0, 2.0, 3.0, 2.5],
-     [2.0, 5.0, -1.0, 2.0],
-     [-1.5, 2.7, 3.3, -0.8]]
+# Inputs from wind => Average Windspeed, Standard Deviation
+X = [[1.0, 2.0],
+     [2.0, 5.0],
+     [-1.5, 2.7]]
 
 
 class LayerDense:  # Hidden Layers
@@ -17,10 +19,11 @@ class LayerDense:  # Hidden Layers
         self.output = np.dot(inputs, self.weights) + self.biases
 
 
-layer1 = LayerDense(4, 5)
-layer2 = LayerDense(5, 2)
+# Hidden Layer 1
+layer1 = LayerDense(2, 5)
+activation1 = ActivationReLU()
 
 layer1.forward(X)
-# print(layer1.output)
-layer2.forward(layer1.output)
-print(layer2.output)
+activation1.forward(layer1.output)
+
+print(activation1.output)
