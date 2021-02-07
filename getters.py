@@ -5,7 +5,6 @@ import os
 import datetime
 os.system('clear')
 
-
 url_stavanger = "http://api.openweathermap.org/data/2.5/weather?id=3137115&"
 url_bergen = "http://api.openweathermap.org/data/2.5/weather?id=3161733&"
 
