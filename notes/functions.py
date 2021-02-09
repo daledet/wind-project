@@ -1,9 +1,14 @@
 import numpy as np
 
 
-layer_outputs = [[4.8, 1.21, 2.385],
-                 [8.9, -1.81, 0.2],
-                 [1.41, 1.051, 0.026]]
+class LayerDense:  # Hidden Layers
+    def __init__(self, n_inputs, n_neurons):
+        # Ordered so that transpose is unnecessary
+        self.weights = 0.10 * np.random.randn(n_inputs, n_neurons)
+        self.biases = np.zeros((1, n_neurons))
+
+    def forward(self, inputs):
+        self.output = np.dot(inputs, self.weights) + self.biases
 
 
 class ActivationReLU:  # ReLU Object
