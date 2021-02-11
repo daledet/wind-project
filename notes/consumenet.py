@@ -8,11 +8,11 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from sklearn import model_selection
 
-df = pd.read_csv('stavangerwind_2020.csv')
+df = pd.read_csv('consumption-no-areas_2020_hourly_MWh.csv')
 # df = df.drop('precipitation', 1)
 
-X = df[['temp', 'humidity', 'wind_speed', 'wind_deg']]
-y = df[['wind_speed']]
+X = df[['temp', 'humidity', 'wind_speed', 'wind_deg', 'NO']]
+y = df[['NO']]
 
 X_train, X_test, y_train, y_test = model_selection.train_test_split(
     X, y, test_size=0.1, random_state=4)
@@ -25,7 +25,7 @@ y_train = ynorm.fit_transform(np.array(y_train).reshape(-1, 1))
 y_test = ynorm.transform(np.array(y_test).reshape(-1, 1))
 
 model = Sequential()
-model.add(Dense(512, input_shape=(4,), activation='relu'))
+model.add(Dense(512, input_shape=(5,), activation='relu'))
 model.add(Dense(256, activation='relu'))
 model.add(Dense(128, activation='relu'))
 model.add(Dense(64, activation='relu'))
@@ -45,8 +45,8 @@ plt.plot(range(0, y_train.shape[0]), ynorm.inverse_transform(
 plt.plot(range(y_train.shape[0], y_train.shape[0]+y_test.shape[0]),
          ynorm.inverse_transform(y_test), label='y_test')
 plt.xlabel('Hours')
-plt.ylabel('Mean Speed')
-plt.title('Wind Speed Forecast')
+plt.ylabel('Mean Consumption')
+plt.title('Consumption Forecast Norway - MWh')
 plt.legend()
 plt.show()
 
