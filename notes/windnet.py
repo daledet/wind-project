@@ -36,8 +36,8 @@ model.compile(loss='mse', optimizer='adam')
 print(model.summary())
 model.fit(X_train, y_train, epochs=10, batch_size=32)
 # predictions
-trainPredict2 = model.predict(X_train)
-testPredict2 = model.predict(X_test)
+trainPredict = model.predict(X_train)
+testPredict = model.predict(X_test)
 
 plt.plot(range(0, y_train.shape[0]), ynorm.inverse_transform(
     y_train), label='y_train')
@@ -53,7 +53,7 @@ plt.show()
 plt.plot(range(0, y_train.shape[0]), ynorm.inverse_transform(
     y_train), label='y_train')
 plt.plot(range(y_train.shape[0], y_train.shape[0]+y_test.shape[0]),
-         ynorm.inverse_transform(testPredict2), label='testPredict')
+         ynorm.inverse_transform(testPredict), label='testPredict')
 
 trainingScore = model.evaluate(X_train, y_train)
 print('Training Score is : %.3f MSE (%.3f RMSE)' %
