@@ -25,12 +25,8 @@ y_train = ynorm.fit_transform(np.array(y_train).reshape(-1, 1))
 y_test = ynorm.transform(np.array(y_test).reshape(-1, 1))
 
 model = Sequential()
-model.add(Dense(512, input_shape=(5,), activation='relu'))
-model.add(Dense(256, activation='relu'))
-model.add(Dense(128, activation='relu'))
-model.add(Dense(64, activation='relu'))
-model.add(Dense(32, activation='relu'))
-model.add(Dense(16, activation='relu'))
+model.add(Dense(10, input_shape=(5,), activation='relu'))
+model.add(Dense(10, activation='relu'))
 model.add(Dense(1))
 model.compile(loss='mse', optimizer='adam')
 print(model.summary())
@@ -49,11 +45,6 @@ plt.ylabel('Mean Consumption')
 plt.title('Consumption Forecast Norway - MWh')
 plt.legend()
 plt.show()
-
-plt.plot(range(0, y_train.shape[0]), ynorm.inverse_transform(
-    y_train), label='y_train')
-plt.plot(range(y_train.shape[0], y_train.shape[0]+y_test.shape[0]),
-         ynorm.inverse_transform(testPredict), label='testPredict')
 
 trainingScore = model.evaluate(X_train, y_train)
 print('Training Score is : %.3f MSE (%.3f RMSE)' %
